@@ -18,24 +18,215 @@ html {
 }
 
 
-body{
-	margin: 0;
-  font-family: sans-serif;
-  //@include zero;
-  // Hides close button if there is no js
-  &.noscript .close-btn,
-  &.noscript .toggle-btn{
-      display: none;
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400|Raleway:300);
+
+$btn-width: 250px !default;
+$btn-height: 80px !default;
+$btn-full: $btn-height+$btn-width !default;
+$btn-half: $btn-full/2 !default;
+$bg-color: #eeeeee !default;
+html {
+  padding-top: 50px;
+  font-family: 'Open Sans', Helvetica, arial, sans-serif;
+  text-align: center;
+  background-color: $bg-color;
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    transition: 0.5s;
+  }
+  i,em,
+  b,strong,
+  span {
+    transition: none;
   }
 }
 
-header {
-  padding: 0 1em;
-  position: relative;
+*:before,
+*:after {
+  z-index: -1;
 }
 
+h1,
+h4 {
+  font-family: 'Raleway', 'Open Sans', sans-serif;
+  margin: 0;
+  line-height: 1;
+}
 
-body.noscript .navigation{
-	postion: static;
-	right: auto;
+a {
+  text-decoration: none;
+  line-height: $btn-height;
+  color: black;
+}
+
+.centerer {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.wrap {
+  width: 50%;
+  float: left;
+}
+
+[class^="btn-"] {
+  position: relative;
+  display: block;
+  margin: 20px auto;
+  @include size(100%, $btn-height);
+  max-width: $btn-width;
+  text-transform: uppercase;
+  overflow: hidden;
+  border: 1px solid currentColor;
+}
+
+.btn-0 {
+  $btn-color: random-color($max:200);
+  $btn-color-dark: shade($btn-color, 40%);
+  color: tint($btn-color);
+  &:before {
+    content: '';
+    @include absolute(0,null,null,0);
+    @include size(0, $btn-height);
+    background: $btn-color-dark;
+  }
+  &:hover {
+    color: tint($btn-color, 75%);
+    &:before {
+      width: $btn-width;
+    }
+  }
+  &:active {
+    background: $btn-color;
+  }
+}
+
+.btn-1 {
+  $btn-color: random-color($max:200);
+  $btn-color-dark: shade($btn-color, 40%);
+  color: tint($btn-color);
+  @include triangle(up-left, 0, $btn-color-dark, true);
+  &:hover {
+    color: tint($btn-color, 75%);
+    &:after {
+      border-width: $btn-full $btn-full 0 0;
+    }
+  }
+  &:active {
+    background: $btn-color;
+  }
+}
+
+.btn-1-2 {
+  $btn-color: random-color($max:200);
+  $btn-color-dark: shade($btn-color, 40%);
+  color: tint($btn-color);
+  @include triangle(down-left, 0, $btn-color-dark, true, before);
+  @include triangle(down-right, 0, $btn-color-dark, true);
+  &:hover {
+    color: tint($btn-color, 75%);
+    &:before {
+      border-width: $btn-half*1.25 0 0 $btn-half*1.25;
+    }
+    &:after {
+      border-width: 0 0 $btn-half*1.25 $btn-half*1.25;
+    }
+  }
+  &:active {
+    background: $btn-color;
+  }
+}
+
+.btn-2 {
+  $btn-color: random-color($max:200);
+  $btn-color-dark: shade($btn-color, 40%);
+  color: tint($btn-color);
+  @include triangle(down-left, 0, $btn-color-dark, true, before);
+  @include triangle(up-right, 0, $btn-color-dark, true);
+  &:hover {
+    color: tint($btn-color, 75%);
+    &:before {
+      border-width: $btn-half 0 0 $btn-half;
+    }
+    &:after {
+      border-width: 0 $btn-half $btn-half 0;
+    }
+  }
+  &:active {
+    background: $btn-color;
+  }
+}
+
+.btn-3 {
+  $btn-color: random-color($max:200);
+  $btn-color-dark: shade($btn-color, 40%);
+  @include triangle(down-left, 0, $btn-color-dark, true, before);
+  @include triangle(up-right, 0, $btn-color-dark, true);
+  color: tint($btn-color);
+  span {
+    @include triangle(down-right, 0, $btn-color-dark, true, before);
+    @include triangle(up-left, 0, $btn-color-dark, true);
+  }
+  &:hover {
+    color: tint($btn-color, 75%);
+    &:before {
+      border-width: $btn-half 0 0 $btn-half;
+    }
+    &:after {
+      border-width: 0 $btn-half $btn-half 0;
+    }
+    span {
+      &:before {
+        border-width: 0 0 $btn-half $btn-half;
+      }
+      &:after {
+        border-width: $btn-half $btn-half 0 0;
+      }
+    }
+  }
+  &:active {
+    background: $btn-color;
+  }
+}
+
+.btn-4 {
+  $btn-color: random-color($max:200);
+  $btn-color-dark: shade($btn-color, 40%);
+  @include triangle(up-right, 0, $btn-color-dark, true);
+  @include triangle(down-left, 0, $btn-color-dark, true, before);
+  color: tint($btn-color);
+  &:before,
+  &:after {
+    border-color: $btn-color-dark;
+  }
+  span {
+    @include triangle(up-left, 0, $btn-color-dark, true);
+    @include triangle(down-right, 0, $btn-color-dark, true, before);
+    &:before,
+    &:after {
+      border-color: $btn-color-dark;
+    }
+  }
+  &:hover {
+    color: tint($btn-color, 75%);
+    &:before {
+      border-width: $btn-height/4 $btn-width/4;
+    }
+    &:after {
+      border-width: $btn-height/4 $btn-width/4;
+    }
+    span {
+      &:before {
+        border-width: $btn-height/4 $btn-width/4;
+        }
+      &:after {
+        border-width: $btn-height/4 $btn-width/4;
+      }
+    }
+  }
+  &:active {
+    background: $btn-color;
+  }
 }
