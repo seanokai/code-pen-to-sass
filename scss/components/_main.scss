@@ -61,8 +61,17 @@ a {
     @include button-2 ($yellow);
 }
 
+.btn-head {
+  color: ($light-grey);
+}
+
+.color {
+  color: darken($yellow, 9%);
+
+}
+
 .btn-0 {
-  color: #7e41c0;
+  color: #9D9D9E;
 
 }
 .btn-0:before {
@@ -72,7 +81,7 @@ a {
   left: 0;
   width: 0;
   height: 80px;
-  background: #3e136d;
+  background: #FA6A2C;
 }
 .btn-0:hover {
   color: #d9c7ed;

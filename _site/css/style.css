@@ -81,8 +81,16 @@ a {
   background: #ff7d68;
 }
 
+.btn-head {
+  color: #ccc;
+}
+
+.color {
+  color: #e1bb00;
+}
+
 .btn-0 {
-  color: #7e41c0;
+  color: #9D9D9E;
 }
 
 .btn-0:before {
@@ -92,7 +100,7 @@ a {
   left: 0;
   width: 0;
   height: 80px;
-  background: #3e136d;
+  background: #FA6A2C;
 }
 
 .btn-0:hover {
