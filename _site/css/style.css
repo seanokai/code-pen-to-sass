@@ -62,7 +62,23 @@ a {
 }
 
 .primary-btn:hover {
-  background: #ffda24;
+  background: #ffd91a;
+}
+
+.secondary-btn {
+  position: relative;
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  height: 80px;
+  max-width: 250px;
+  text-transform: uppercase;
+  overflow: hidden;
+  border: 1px solid currentColor;
+}
+
+.secondary-btn:hover {
+  background: #ff7d68;
 }
 
 .btn-0 {

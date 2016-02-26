@@ -21,9 +21,25 @@
   border: 1px solid currentColor;
 
   &:hover {
-    background:  lighten($orange, 4%)
+    background:  lighten($orange, 2%)
+    color: darken($grey-dark, 2%)
   }         
 }
 
+@mixin button-2($grey-dark){        // The argument passed is in the round brackets
+    position: relative;
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  height: 80px;
+  max-width: 250px;
+  text-transform: uppercase;
+  overflow: hidden;
+  border: 1px solid currentColor;
+
+  &:hover {
+    background:  lighten($orange, 1%)
+  }         
+}
 
 

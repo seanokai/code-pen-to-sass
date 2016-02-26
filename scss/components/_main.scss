@@ -57,6 +57,10 @@ a {
     @include button-1 ($yellow);
 }
 
+.secondary-btn {
+    @include button-2 ($yellow);
+}
+
 .btn-0 {
   color: #7e41c0;
 
