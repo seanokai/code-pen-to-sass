@@ -51,20 +51,15 @@ a {
   float: left;
 }
 
-[class^="btn-"] {
-  position: relative;
-  display: block;
-  margin: 20px auto;
-  width: 100%;
-  height: 80px;
-  max-width: 250px;
-  text-transform: uppercase;
-  overflow: hidden;
-  border: 1px solid currentColor;
+
+
+.primary-btn {
+    @include button-1 ($yellow);
 }
 
 .btn-0 {
   color: #7e41c0;
+
 }
 .btn-0:before {
   content: '';
